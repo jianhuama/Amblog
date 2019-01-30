@@ -14,11 +14,11 @@
     <!--搜索框-->
     <transition name="el-fade-in-linear">
       <div v-show="$store.state.header_search_show" class="search-div">
+
         <el-button class="search-div-close" @click="$store.commit('handlerSearchVis')" icon="el-icon-close"
                    circle></el-button>
-        <br/><br/>
         <div class="search-input">
-          <el-input v-model="searchInput" placeholder="键入搜索关键字" clearable>
+          <el-input v-model="searchInput"  placeholder="键入搜索关键字" clearable>
             <el-button slot="append" icon="el-icon-search" @click="submitEvent"></el-button>
           </el-input>
           <br>
@@ -147,10 +147,8 @@
       .search-div-close
         display: block
         position: absolute
-        left: 50%
-        right: 50%
-        margin-top: 100px;
-
+        right: 10%
+        top: 20px;
       .search-input
         display: block
 
