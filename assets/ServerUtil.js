@@ -4,9 +4,9 @@ import Const from './Const'
 import querystring from 'querystring'
 
 var http = {
-  selfUrl:'http://localhost:3001',
-  baseURL: 'http://www.uychen.com/json/front',
-  //baseURL: 'http://localhost:8080/front',
+  selfUrl:'http://localhost:3000',
+
+  baseURL: 'http://localhost:8080/front',
   req: axios,
   Const: Const,
   qs(obj) {  //转换格式为请求拼接

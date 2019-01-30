@@ -12,6 +12,7 @@ Amoblog 博客前端项目
 1. git clone https://gitee.com/Jack-chendeng/Amoblog-front.git
 2. cd Amoblog-front
 3. npm install
+5. 修改您本地ServerUtil.js 中服务器请求地址：baseURL
 4. npm run dev
 
 #### 使用说明

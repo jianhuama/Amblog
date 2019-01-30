@@ -5,8 +5,8 @@
 
       <el-carousel v-show="carouselShow" indicator-position="outside" class="carousel" :interval="intervalTime"
                    height="250px">
-        <el-carousel-item v-for="item in data.slideUrlList" :key="item">
-          <img :src="item"/>
+        <el-carousel-item v-for="item in data.slideUrlList" :key="item.id" :label="item.text">
+          <a :href="item.href" target="_blank"><img :src="item.image"/></a>
         </el-carousel-item>
 
       </el-carousel>
@@ -52,7 +52,7 @@
     <el-aside class="hidden-xs-only aside">
 
       <el-card class="aside-self-card" :body-style="{padding: '5px'}">
-        <div class="as-self-head">
+        <div class="as-self-head" :style="{background:headOutImage}">
           <img :src="data.admin.mainimg"/>
         </div>
 
@@ -125,7 +125,7 @@
       let [top, articleList, slideList] = await Promise.all([
         http.req.get(http.baseURL + '/get-top-article'),
         http.dataUtil.getArticleNewAll(page, http.Const.pageSize),
-        http.req.get(http.selfUrl + "/slideConfig.json")
+        http.req.get(http.baseURL + "/getBannerList")
       ]);
 
       let topdata;
@@ -139,7 +139,7 @@
           admin: params.store.state.admin,
           articleTop: topdata != null ? topdata.article : null,
           articleList: articleList,
-          slideUrlList: JSON.parse(JSON.stringify(slideList.data))
+          slideUrlList: slideList.data.data
         }
       }
     },
@@ -149,6 +149,7 @@
         intervalTime: 5000,  //轮播图的自动滚动延迟时间,
         carouselShow: true, //轮播图的的是否显示控制变量,
         count: http.Const.pageSize,
+        headOutImage:"url(\"/img/head_out.png\") center center no-repeat",
         data: {
           admin: {},
           articleTop: {},
@@ -223,7 +224,6 @@
         padding-bottom: 10px
         .as-self-head
           //background: url("http://grace.wpbyg.com/wp-content/themes/2018030117190543/img/img_usercard_bg.jpg") center center no-repeat
-          background-color: #dbe1ec
           position: relative
           background-size: cover
           height: 140px

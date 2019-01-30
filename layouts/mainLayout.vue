@@ -1,6 +1,6 @@
 <template>
 
-  <div>
+  <div style="height: 100%;min-height: 100%">
     <!--顶部header容器-->
     <m-header></m-header>
 
@@ -9,7 +9,7 @@
     <nuxt v-show="!$store.state.header_search_show"/>
 
     <!--底部footer容器-->
-    <m-footer></m-footer>
+    <m-footer class="bottomFooter"></m-footer>
 
     <!--搜索框-->
     <transition name="el-fade-in-linear">
@@ -112,6 +112,10 @@
   html, body, #__nuxt, #__layout
     height: 100%
 
+  .bottomFooter
+    position: absolute
+    bottom: 0px
+
   .search-div //搜索框的
     position: fixed
     background-color: white
@@ -145,7 +149,9 @@
         position: absolute
         left: 50%
         right: 50%
-        margin-bottom: 15px
+        margin-top: 100px;
+
       .search-input
         display: block
+
 </style>

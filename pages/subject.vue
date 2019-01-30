@@ -69,8 +69,8 @@
 
 <style lang="stylus" scoped>
   .el-content
+    height: 100%
     .main
-      min-height: 100%
       padding: 0
     .header::before
       content: ''
