@@ -1,5 +1,7 @@
 # Amoblog-front
 
+[![Fork me on Gitee](https://gitee.com/Jack-chendeng/Amoblog-front/widgets/widget_3.svg)](https://gitee.com/Jack-chendeng/Amoblog-front)
+
 #### 介绍
 Amoblog 博客前端项目
 
