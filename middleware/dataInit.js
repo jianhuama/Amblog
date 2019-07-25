@@ -9,7 +9,7 @@ export default async function (params) {
   //保存热门文章的
   if (params.store.state.hotArticleList.length == 0) {
     let hotArticleList = await http.dataUtil.getArticleNewAll(1, 5);
-    params.store.commit('setHotArticleList', hotArticleList.list);
+    params.store.commit('setHotArticleList', hotArticleList.records);
   }
   //保存推荐主题的
   if (params.store.state.hotSubjectList.length == 0) {
@@ -29,6 +29,6 @@ export default async function (params) {
   //保存获取的所有分类list
   if (params.store.state.sortListAll.length == 0) {
     let sortList = await http.dataUtil.getSortAll();
-    params.store.commit('setSortAll', sortList.list);
+    params.store.commit('setSortAll', sortList.records);
   }
 }

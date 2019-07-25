@@ -30,7 +30,7 @@
       <h4>最新发布</h4>
 
       <!--文章的开始-->
-      <article-item :data="data.articleList.list"></article-item>
+      <article-item :data="data.articleList.records"></article-item>
       <!--文章的结尾-->
       <br/>
 
@@ -149,7 +149,7 @@
         intervalTime: 5000,  //轮播图的自动滚动延迟时间,
         carouselShow: true, //轮播图的的是否显示控制变量,
         count: http.Const.pageSize,
-        headOutImage:"url(\"/img/head_out.png\") center center no-repeat",
+        headOutImage: "url(\"/img/head_out.png\") center center no-repeat",
         data: {
           admin: {},
           articleTop: {},

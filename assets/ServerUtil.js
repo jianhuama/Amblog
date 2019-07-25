@@ -4,9 +4,9 @@ import Const from './Const'
 import querystring from 'querystring'
 
 var http = {
-  selfUrl:'http://localhost:3000',
-
-  baseURL: 'http://localhost:8080/front',
+  selfUrl: 'http://localhost:3000',
+  // baseURL: 'http://www.uychen.com/json/front',
+  baseURL: 'http://localhost:8681/front',
   req: axios,
   Const: Const,
   qs(obj) {  //转换格式为请求拼接
@@ -25,6 +25,7 @@ var http = {
       .then(res => {
         let root = res.data;
         if (root.code != 0) {
+          console.log("{返回结果:}\n" + JSON.stringify(root));
           callbackSuccess(root.data);
           return;
         } else {
